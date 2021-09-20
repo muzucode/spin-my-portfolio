@@ -12,3 +12,14 @@ Get current authenticated user ------>
 Sign up with unique info, enable cognito, disable DynamoDb
 Sign in
 Sign up with same info, disable cognito, enable DynamoDb
+
+TODO:
+
+Configure Lambda/Cognito/DynamoDB conditionals mentioned earlier
+
+Add navbar:
+  Sign up
+  Sign in
+  Spin
+  Inventory
+  Leaderboard
