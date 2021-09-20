@@ -1,0 +1,49 @@
+{
+  "paths": [
+    {
+      "name": "/users",
+      "lambdaFunction": "OrangeLambdaFunction",
+      "privacy": {
+        "protected": true,
+        "auth": [
+          "/POST",
+          "/GET",
+          "/PUT",
+          "/PATCH",
+          "/DELETE"
+        ],
+        "unauth": [
+          "/POST",
+          "/GET",
+          "/PUT",
+          "/PATCH",
+          "/DELETE"
+        ]
+      },
+      "policyResourceName": "/users"
+    }
+  ],
+  "resourceName": "OrangeAPI",
+  "apiName": "OrangeAPI",
+  "functionArns": [
+    {
+      "lambdaFunction": "OrangeLambdaFunction"
+    }
+  ],
+  "privacy": {
+    "auth": 1,
+    "unauth": 1,
+    "authRoleName": "amplify-spinmyportfolio-dev-195200-authRole",
+    "unAuthRoleName": "amplify-spinmyportfolio-dev-195200-unauthRole"
+  },
+  "dependsOn": [
+    {
+      "category": "function",
+      "resourceName": "OrangeLambdaFunction",
+      "attributes": [
+        "Name",
+        "Arn"
+      ]
+    }
+  ]
+}

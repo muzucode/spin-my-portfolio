@@ -1,0 +1,14 @@
+Sign up w/ Cognito ----> 
+Confirm -----> 
+Sign In w/ Cognito -----> 
+Get current authenticated user ------>
+-------------> If current authenticated user ID doesn't exist in the database then write it to the database <--------------------------
+-------------> If current authenticated user ID exists in the database then do nothing <-----------------------------------------------
+
+
+
+
+
+Sign up with unique info, enable cognito, disable DynamoDb
+Sign in
+Sign up with same info, disable cognito, enable DynamoDb

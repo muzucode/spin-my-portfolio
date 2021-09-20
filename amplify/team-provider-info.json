@@ -1,0 +1,26 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-spinmyportfolio-dev-195200-authRole",
+      "UnauthRoleArn": "arn:aws:iam::366483514319:role/amplify-spinmyportfolio-dev-195200-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::366483514319:role/amplify-spinmyportfolio-dev-195200-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-spinmyportfolio-dev-195200-deployment",
+      "UnauthRoleName": "amplify-spinmyportfolio-dev-195200-unauthRole",
+      "StackName": "amplify-spinmyportfolio-dev-195200",
+      "StackId": "arn:aws:cloudformation:us-east-1:366483514319:stack/amplify-spinmyportfolio-dev-195200/41a800d0-1812-11ec-9335-0e41eb28ac6d",
+      "AmplifyAppId": "d1k7ev0xucclw5"
+    },
+    "categories": {
+      "function": {
+        "OrangeLambdaFunction": {
+          "deploymentBucketName": "amplify-spinmyportfolio-dev-195200-deployment",
+          "s3Key": "amplify-builds/OrangeLambdaFunction-4e635277596248784348-build.zip"
+        }
+      },
+      "auth": {
+        "spinmyportfolio75b76fda": {}
+      }
+    }
+  }
+}
