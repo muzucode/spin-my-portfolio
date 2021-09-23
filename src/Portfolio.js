@@ -129,17 +129,17 @@ export default class Portfolio extends React.Component {
  
   };
 
-    // 'mangobango', 'qazwsx123'
+    // Cognito sign in, post to DB if user doesn't exist in DB already
   cognitoSignIn (username, password) {
     try {
       // Sign in
       const user = Auth.signIn(username, password)
       .then(res => {
         console.log(res);
-        return res
+        return res;
       })
       .then(() => {
-        // If success, post user to DB
+        // If successful sign in, post user to DB
         this.postCurrentUserToDB(username);
       })
       .catch(err => {
@@ -162,9 +162,9 @@ export default class Portfolio extends React.Component {
       // Save attributes
       userAttributes = attributes;
       console.log(userAttributes);
-
+      
       // Post to db
-      const response = await API.post('OrangeAPI', '/users/signUp', {
+      const response = await API.post('OrangeAPI', '/users/putInDB', {
         body: {
           'userId' : userAttributes.sub,
           'username': username
@@ -253,8 +253,6 @@ export default class Portfolio extends React.Component {
 
   render () {
     var currentUser = this.state.currentUser;
-    var username = 'nerodffx55';
-    var password = 'qazwsx123';
     // If selected portfolio is nothing, show loading
     // if (Object.entries(this.state.selectedUser).length === 0)
     //   return (<p>Loading data...</p>);
@@ -284,13 +282,6 @@ export default class Portfolio extends React.Component {
 
             <p>{currentUser.userId}</p>
             <p>{currentUser.userId}</p>
-            <Button onClick={() => {this.cognitoSignIn(username, password)}}>
-              Auto Sign In
-            </Button>
-
-            <Button onClick={() => {this.cognitoSignUp(username, password)}}>
-              Auto Sign Up
-            </Button>
 
             <Button onClick={() => {this.getCurrentUser()}}>
               Get current user
