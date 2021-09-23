@@ -28,4 +28,9 @@
 
 .top-nav a{
   color: white;
+
+}
+.top-nav a:hover{
+  color: #61dafa;
+
 }

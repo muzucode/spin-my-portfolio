@@ -1,6 +1,6 @@
 import React from 'react';
 import '../App.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 export default class TopNavBar extends React.Component {
   render () {
