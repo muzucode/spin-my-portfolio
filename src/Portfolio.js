@@ -26,17 +26,8 @@ export default class Portfolio extends React.Component {
       signIn: {
         username: '',
         password: ''
-      },
-      userInputSignUp: '',
-      passInputSignUp: '',
-      usernameInputValue: '',
-      passwordInputValue: ''
+      }
     }
-
-    // Variables for user/pass input
-    this.userInputSignUp = '';
-    this.passInputSignUp = '';
-
   }
 
   componentDidMount() {
@@ -70,44 +61,6 @@ export default class Portfolio extends React.Component {
     });
 
     return user;
-  }
-
-  getCurrentUserData(cognito, dynamo) {
-    if(cognito){
-      const user = Auth.currentAuthenticatedUser()
-      .then(res => {
-        console.log(res);
-        // Set currentUser state
-        this.setState({currentUser : res});
-        return res;
-      });
-
-      return user;
-    }
-
-    // if(dynamo) {
-    //   // Get current user from DB
-    //   API.get('OrangeAPI','/users/getUser', {
-    //     queryStringParameters: {
-    //       user: this.state.currentUser.username,
-    //     }
-    //   })
-    //   // Receive portfolio
-    //   .then((res) => {
-    //     console.log(res);
-    //     // Set portfolio state
-    //     if(res.body.includes('DB CALL ERROR')===false) {
-    //       console.log(res.body[0]);
-    //       this.setState({selectedUser: res.body[0]})
-    //     } 
-    //     else {
-    //       console.error('There was a DB CALL ERROR in Lambda');
-    //     }
-  
-    //   });
-    // }
-
-
   }
 
   async cognitoSignUp(username, password) {
@@ -193,8 +146,6 @@ export default class Portfolio extends React.Component {
 
     console.log(await response);
   }
-
-
 
   handleUsernameInputChangeSignIn = e => {
     this.setState(prevState => {

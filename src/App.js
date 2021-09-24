@@ -14,17 +14,14 @@ export default class App extends React.Component  {
         {/* Header */}
         <div className="App-header container-fluid w-100">
           <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Simple React App</h1>
+          <h1 className="App-title">Spin My Portfolio</h1>
+
           {/* Navbar */}
           <TopNavBar/>
         </div>
 
-
-
-
         {/* Router View */}
         <AppRouterView/>
-
 
       </div>
 
