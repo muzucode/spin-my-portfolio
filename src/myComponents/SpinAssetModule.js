@@ -14,10 +14,12 @@ export default function SpinAssetModule (props) {
           <Card className="centeralign px-4 pb-4">
             <Card.Body>
               <Card.Title>
-                Spin!
+                {
+                  props.cardTitle
+                }
               </Card.Title>  
               <Card.Subtitle>
-                Good luck!
+                {props.cardSubtitle}
               </Card.Subtitle>
               <Card.Img  className="my-5 w-50" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Noun_Project_question_mark_icon_1101884_cc.svg/480px-Noun_Project_question_mark_icon_1101884_cc.svg.png"/>
             </Card.Body>

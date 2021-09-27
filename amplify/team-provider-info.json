@@ -15,7 +15,7 @@
       "function": {
         "OrangeLambdaFunction": {
           "deploymentBucketName": "amplify-spinmyportfolio-dev-195200-deployment",
-          "s3Key": "amplify-builds/OrangeLambdaFunction-4e635277596248784348-build.zip"
+          "s3Key": "amplify-builds/OrangeLambdaFunction-616f764b3868756e3564-build.zip"
         }
       },
       "auth": {
