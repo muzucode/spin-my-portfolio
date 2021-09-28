@@ -1,6 +1,6 @@
 var style = {
-  backgroundColor: "#F8F8F8",
-  borderTop: "1px solid #E7E7E7",
+  backgroundColor: "#222222",
+  borderTop: "1px solid #222222",
   textAlign: "center",
   padding: "20px",
   position: "fixed",

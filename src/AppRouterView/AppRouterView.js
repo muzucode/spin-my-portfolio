@@ -5,7 +5,7 @@ import {
   Route,
   Redirect
 } from "react-router-dom";
-import Portfolio from '../Portfolio';
+import Portfolio from '../Views/Portfolio';
 import SignInView from '../Views/SignInView';
 import SignUpView from '../Views/SignUpView';
 import LeaderboardsView from '../Views/LeaderboardsView';
