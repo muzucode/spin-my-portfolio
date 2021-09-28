@@ -1,9 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee&family=Koh+Santepheap:wght@100;400&family=Playball&display=swap');
 .App {
   text-align: center;
 }
 
 .App-logo {
-  animation: App-logo-spin infinite 20s linear;
+  animation: App-logo-spin infinite 30s linear;
   height: 80px;
 }
 
@@ -14,7 +15,9 @@
 }
 
 .App-title {
-  font-size: 1.5em;
+  font-size: 3em;
+  font-family: 'Koh Santepheap', cursive;
+  font-weight: 400;
 }
 
 .App-intro {
@@ -28,12 +31,22 @@
 
 .top-nav a{
   color: white;
+  text-decoration: none;
+}
+.top-nav {
+  font-family: 'Koh Santepheap', cursive;
 
 }
 .top-nav a:hover{
   color: #61dafa;
-
+  text-decoration: underline;
 }
 .App {
   background-color: rgb(112, 117, 143);
+}
+.sectionHeading {
+  font-family: 'Playball', cursive;
+}
+.spinCardTitle {
+  font-family: 'Playball', cursive;
 }

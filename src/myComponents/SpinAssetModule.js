@@ -53,12 +53,12 @@ export default class SpinAssetModule extends React.Component {
       <Container>
         <Row className="justify-content-md-center">
           <Col md={4}>
-            <Card className="centeralign px-4 pb-4">
+            <Card className="centeralign px-4 pb-4 pt-3">
               <Card.Body>
-                <Card.Title>
+                <Card.Title className="spinCardTitle">
                   {this.props.cardTitle}
                 </Card.Title>  
-                <Card.Subtitle>
+                <Card.Subtitle className="spinCardTitle">
                   {this.props.cardSubtitle}
                 </Card.Subtitle>
 

@@ -14,8 +14,8 @@ export default class SpinAssetView extends React.Component {
 
       },
       card: {
-        title: 'Spin!',
-        subtitle: 'Good luck!',
+        title: 'Good luck!',
+        subtitle: '',
         imgURL: 'None'
       },
       loadingAsset: false,
