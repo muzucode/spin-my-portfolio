@@ -4,6 +4,7 @@ import Container from 'react-bootstrap/Container';
 import SectionHeading from "../myComponents/SectionHeading";
 import Amplify, { API, Auth } from 'aws-amplify';
 import awsconfig from '../aws-exports';
+
 Amplify.configure(awsconfig);
 
 export default class SignInView extends React.Component {
@@ -16,6 +17,7 @@ export default class SignInView extends React.Component {
       }
     }
   }
+
 
   getCurrentUser() {
     const user = Auth.currentAuthenticatedUser()
@@ -101,8 +103,12 @@ export default class SignInView extends React.Component {
     console.log(this.state.signIn.password);
 
     // cognito sign in
-    this.cognitoSignIn(this.state.signIn.username, this.state.signIn.password);
+    const response = this.cognitoSignIn(this.state.signIn.username, this.state.signIn.password)
+      .then(() => {
+        window.location.href = '/leaderboards'
+      });
 
+    return response;
   }
 
   render () {

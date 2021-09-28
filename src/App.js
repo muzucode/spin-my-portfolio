@@ -4,6 +4,7 @@ import React from 'react';
 import AppRouterView from './AppRouterView/AppRouterView';
 import TopNavBar from './myComponents/TopNavBar';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Footer from './myComponents/Footer';
 
 export default class App extends React.Component  {
   render() {
@@ -23,6 +24,11 @@ export default class App extends React.Component  {
         {/* Router View */}
         <AppRouterView/>
 
+
+        {/* Footer */}
+        <Footer 
+          children="MY FOOTER"
+        />
       </div>
 
     );

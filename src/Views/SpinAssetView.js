@@ -17,15 +17,24 @@ export default class SpinAssetView extends React.Component {
         title: 'Spin!',
         subtitle: 'Good luck!',
         imgURL: 'None'
-      }
+      },
+      loadingAsset: false,
+      assetImg: 'https://static.thenounproject.com/png/60319-200.png'
     };
   }
 
 
   handleSpin = async () => {
 
+    // Set loadingAsset state
+    this.setState({loadingAsset: true});
+
     // Generate random asset
     var asset = AssetService.randomAsset();
+
+    // Send asset name to getAssetImage(),
+    // then load an image based on the asset name
+    this.getAssetImage(asset.name);
 
     // Create newAsset
     var newAsset = Object.assign(asset);
@@ -47,27 +56,49 @@ export default class SpinAssetView extends React.Component {
     this.setState({asset: newAsset}, () => { console.log(this.state.asset)});
 
     // Post asset to api
-    const response = await API.post('OrangeAPI', '/users/addAsset', {
+    const response = API.post('OrangeAPI', '/users/addAsset', {
       body: newAsset
-    });
+    })
+      .then(res => {
+        // Update card element state
+        this.setState(prevState => ({
+          card: {                 
+            ...prevState.card,    
+            title: newAsset.name,
+            subtitle: `Rarity: ${newAsset.rarity}`,
+            imgURL: 'None right now'
+          },
+          loadingAsset: false
+        } 
+        ));
+        return res;
+      });
 
     // Log API response
     console.log(await response);
 
-    // Set state of the card to update its contents
-    this.setState(prevState => ({
-      card: {                 
-        ...prevState.card,    
-        title: newAsset.name,
-        subtitle: `Rarity: ${newAsset.rarity}`,
-        imgURL: 'None right now'
-      }
-    }));
-
-    // Update card title element (asset name)
-    // Update card subtitle element (asset rarity)
-    // Update asset image element (asset image URL)
     return newAsset;
+  }
+
+  getAssetImage = (name) => {
+    switch(name){
+      case 'Pizza':
+        this.setState({assetImg: 'https://freepngimg.com/thumb/pizza/2-pizza-png-image-thumb.png'})
+        break;
+      case 'Huge cheeseburger':
+          this.setState({assetImg: 'https://freepngimg.com/thumb/burger%20sandwich/5-hamburger-burger-png-image-thumb.png'})
+          break;
+      case 'Mona Lisa':
+        this.setState({assetImg: 'https://www.howitworksdaily.com/wp-content/uploads/2013/09/Mona_Lisa_cover-200x200.jpg'})
+          break;      
+      case 'Van Gogh':
+        this.setState({assetImg: 'https://www.vangoghroute.com/site/assets/files/3019/arl_gelehuis_a01.-vierkant.jpg'})
+          break;
+      default:
+        break
+    }
+      
+    
   }
 
 
@@ -79,6 +110,8 @@ export default class SpinAssetView extends React.Component {
           handleSpin={this.handleSpin}
           cardTitle={this.state.card.title}
           cardSubtitle={this.state.card.subtitle}
+          loadingAsset={this.state.loadingAsset}
+          assetImg={this.state.assetImg}
         />
       </Container>
     )

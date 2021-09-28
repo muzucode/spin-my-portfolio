@@ -3,35 +3,83 @@ import Card from "react-bootstrap/esm/Card";
 import Container from "react-bootstrap/esm/Container";
 import Row from "react-bootstrap/esm/Row";
 import Col from "react-bootstrap/esm/Col";
-import Button from "react-bootstrap/esm/Button"
+import Button from "react-bootstrap/esm/Button";
+import Spinner from 'react-bootstrap/esm/Spinner'
 
-export default function SpinAssetModule (props) {
+export default class SpinAssetModule extends React.Component {
 
-  return (
-    <Container>
-      <Row className="justify-content-md-center">
-        <Col md={4}>
-          <Card className="centeralign px-4 pb-4">
-            <Card.Body>
-              <Card.Title>
-                {
-                  props.cardTitle
-                }
-              </Card.Title>  
-              <Card.Subtitle>
-                {props.cardSubtitle}
-              </Card.Subtitle>
-              <Card.Img  className="my-5 w-50" src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Noun_Project_question_mark_icon_1101884_cc.svg/480px-Noun_Project_question_mark_icon_1101884_cc.svg.png"/>
-            </Card.Body>
-            <Button 
-              variant="dark"
-              onClick={props.handleSpin}    
-            >
-                Spin.
-            </Button>
-          </Card>
-        </Col>
-      </Row>
-    </Container>
-  )
+  constructor(props) {
+    super(props);
+    this.state = {
+
+    };
+  }
+
+  componentDidMount() {
+
+  }
+
+  renderLoadingAnimation = () => {
+    if(this.props.loadingAsset) {
+      return(
+      <Spinner 
+        animation="border"
+        className="my-5"
+      />);
+    } 
+    else {
+      return null;
+    }
+  }
+
+  renderAssetImage = () => {
+    if(!this.props.loadingAsset){
+      return (
+        <Card.Img
+          // Src is equal to the prop
+          src={this.props.assetImg}
+          className="w-50 my-4"
+        />
+      )
+    }
+    else {
+      return null
+    }
+
+  }
+
+  render () {
+    return (
+      <Container>
+        <Row className="justify-content-md-center">
+          <Col md={4}>
+            <Card className="centeralign px-4 pb-4">
+              <Card.Body>
+                <Card.Title>
+                  {this.props.cardTitle}
+                </Card.Title>  
+                <Card.Subtitle>
+                  {this.props.cardSubtitle}
+                </Card.Subtitle>
+
+                {/* Render Card.Img */}
+                {this.renderAssetImage()}
+
+                {/* Loading animation if isLoading */}
+                {this.renderLoadingAnimation()}
+
+              </Card.Body>
+              <Button 
+                variant="dark"
+                onClick={this.props.handleSpin}    
+              >
+                  Spin.
+              </Button>
+            </Card>
+          </Col>
+        </Row>
+      </Container>
+    )
+  }
+
 }
