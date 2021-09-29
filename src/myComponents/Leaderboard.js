@@ -80,7 +80,7 @@ export default class Leaderboard extends React.Component {
   
   render () {
     return (
-      <Container className>
+      <Container>
         <Row className="justify-content-md-center">
           <Col md={4}>
             <Card className="centeralign">

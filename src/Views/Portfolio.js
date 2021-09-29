@@ -9,6 +9,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import ListGroup from 'react-bootstrap/ListGroup';
 import Spinner from 'react-bootstrap/Spinner'
+import AssetItem from '../myComponents/AssetItem';
 
 Amplify.configure(awsconfig);
 
@@ -97,21 +98,24 @@ export default class Portfolio extends React.Component {
       // Generate rand for testing 
       var rand = Math.round(Math.random() * 10000);
 
-      // Add element
+      // Create array of all asset items
       assetElements.push(
-      <ListGroup.Item 
-        key={i}
-      >
-        {/* Aligns content to the left */}
-        <Row className="ps-3">
-          <Col md={4} className="text-start"><b>Name: </b>{this.state.assets[i].name}</Col>
-          <Col md={4} className="text-start"><b>Rarity: </b>{this.state.assets[i].rarity}</Col>
-          <Col md={4} className="text-start"><b>Market: </b>{'$' + rand}</Col>
-        </Row>
-      </ListGroup.Item>);
+          <AssetItem
+            key={i}
+            name={this.state.assets[i].name}
+            rarity={this.state.assets[i].rarity}
+            marketValue={rand}
+            assetId={this.state.assets[i].assetId}
+          />
+      );
     }
 
-    return assetElements;
+    // Return a row with all the assetItems
+    return (
+      <Row className="ps-3"> 
+        {assetElements}
+      </Row>
+    );
   }
 
   renderLoadingAnimation = () => {
@@ -135,7 +139,7 @@ export default class Portfolio extends React.Component {
           <Col md={8}>
             <SectionHeading title={'My Portfolio'}/>
             <Card className="centeralign p-4">
-              <Card.Title>{this.state.loggedIn ? 'Assets' : 'No user found'}</Card.Title>
+              <Card.Title>{this.state.loggedIn ? null : 'No user found'}</Card.Title>
               <Card.Body>
 
                 {/* Loading animation if isLoadingPortfolio */}

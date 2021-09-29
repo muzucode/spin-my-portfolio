@@ -50,3 +50,7 @@
 .spinCardTitle {
   font-family: 'Playball', cursive;
 }
+.assetItem {
+  width:75px;
+  height:75px;
+}
