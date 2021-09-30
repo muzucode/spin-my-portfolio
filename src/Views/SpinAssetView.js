@@ -81,25 +81,9 @@ export default class SpinAssetView extends React.Component {
   }
 
   getAssetImage = (name) => {
-    switch(name){
-      case 'Pizza':
-        this.setState({assetImg: 'https://freepngimg.com/thumb/pizza/2-pizza-png-image-thumb.png'})
-        break;
-      case 'Huge cheeseburger':
-          this.setState({assetImg: 'https://freepngimg.com/thumb/burger%20sandwich/5-hamburger-burger-png-image-thumb.png'})
-          break;
-      case 'Mona Lisa':
-        this.setState({assetImg: 'https://www.howitworksdaily.com/wp-content/uploads/2013/09/Mona_Lisa_cover-200x200.jpg'})
-          break;      
-      case 'Van Gogh':
-        this.setState({assetImg: 'https://www.vangoghroute.com/site/assets/files/3019/arl_gelehuis_a01.-vierkant.jpg'})
-          break;
-      default:
-        break
-    }
-      
-    
+    this.setState({assetImg: AssetService.getAssetImageResource(name)});
   }
+      
 
 
   render () {

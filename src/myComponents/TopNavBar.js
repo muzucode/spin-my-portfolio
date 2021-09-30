@@ -28,7 +28,7 @@ export default class TopNavBar extends React.Component {
     if(!this.state.loggedIn) {
       // console.log('rendering sign in...');
       return (
-        <span><a href="/signin">Sign In</a>{' '}|{' '}</span>
+        <span><a href="/signin">Sign In</a></span>
       );
     }
   }
@@ -38,6 +38,22 @@ export default class TopNavBar extends React.Component {
       // console.log('rendering sign out...');
       return (
         <span><a href="/spin" onClick={e => this.handleSignOut(e)}>Sign Out</a> {' '}|{' '}</span>
+      );
+    }
+  }
+
+  renderMyPortfolioTab = () => {
+    if(this.state.loggedIn) {
+      return (
+        <span><a href="/my-portfolio">My Portfolio</a> {' '}|{' '}</span>
+      );
+    }
+  }  
+  
+  renderSpinAnAssetTab = () => {
+    if(this.state.loggedIn) {
+      return (
+        <span><a href="/spin">Spin an Asset</a></span>
       );
     }
   }
@@ -54,6 +70,8 @@ export default class TopNavBar extends React.Component {
       });
     this.setState({loggedIn : false});
   }
+
+
 
   isLoggedIn = () => {
     try {
@@ -76,9 +94,9 @@ export default class TopNavBar extends React.Component {
         {this.renderSignUpTab()}
         {/* Sign In */}
         {this.renderSignInTab()}
-        <a href="/leaderboards">Leaderboards</a>{' '}|{' '}
-        <a href="/my-portfolio">My Portfolio</a>{' '}|{' '}
-        <a href="/spin">Spin an Asset</a>
+        {/* <a href="/leaderboards">Leaderboards</a>{' '}|{' '} */}
+        {this.renderMyPortfolioTab()}
+        {this.renderSpinAnAssetTab()}
       </div>
     )
   }

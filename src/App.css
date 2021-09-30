@@ -4,7 +4,7 @@
 }
 
 .App-logo {
-  animation: App-logo-spin infinite 30s linear;
+  /* animation: App-logo-spin infinite 30s linear; */
   height: 80px;
 }
 
@@ -15,7 +15,7 @@
 }
 
 .App-title {
-  font-size: 3em;
+  font-size: 2em;
   font-family: 'Koh Santepheap', cursive;
   font-weight: 400;
 }
@@ -51,6 +51,6 @@
   font-family: 'Playball', cursive;
 }
 .assetItem {
-  width:75px;
-  height:75px;
+  width:100px;
+  height:100px;
 }

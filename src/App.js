@@ -1,5 +1,4 @@
-import logo from './logo.svg';
-import logo2 from './Assets/spin.png'
+import logo3 from './Assets/LogoMona.png'
 import './App.css';
 import React from 'react';
 import AppRouterView from './AppRouterView/AppRouterView';
@@ -15,8 +14,8 @@ export default class App extends React.Component  {
         
         {/* Header */}
         <div className="App-header container-fluid w-100">
-          <img src={logo2} className="App-logo mb-3" alt="logo" />
-          <h1 className="App-title">Spin My Portfolio</h1>
+          <img src={logo3} className="App-logo mb-3" alt="logo" />
+          <h1 className="App-title">Fine Point</h1>
 
           {/* Navbar */}
           <TopNavBar/>
