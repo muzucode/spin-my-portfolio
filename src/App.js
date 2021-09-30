@@ -26,9 +26,9 @@ export default class App extends React.Component  {
 
 
         {/* Footer */}
-        <Footer 
+        {/* <Footer 
           children="MY FOOTER"
-        />
+        /> */}
       </div>
 
     );
