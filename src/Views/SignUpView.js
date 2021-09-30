@@ -62,7 +62,10 @@ export default class SignUpView extends React.Component {
     console.log(this.state.signUp.password);
 
     // cognito sign up
-    this.cognitoSignUp(this.state.signUp.username, this.state.signUp.password);
+    this.cognitoSignUp(this.state.signUp.username, this.state.signUp.password)
+    .then(() => {
+      window.location.href = '/signin'
+    });
   }
 
   render () {
