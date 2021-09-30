@@ -105,7 +105,7 @@ export default class SignInView extends React.Component {
     // cognito sign in
     const response = this.cognitoSignIn(this.state.signIn.username, this.state.signIn.password)
       .then(() => {
-        window.location.href = '/leaderboards'
+        window.location.href = '/spin'
       });
 
     return response;
