@@ -71,8 +71,6 @@ export default class TopNavBar extends React.Component {
     this.setState({loggedIn : false});
   }
 
-
-
   isLoggedIn = () => {
     try {
       Auth.currentAuthenticatedUser()
@@ -82,6 +80,14 @@ export default class TopNavBar extends React.Component {
     }
     catch {
       this.setState({loggedIn: false});
+    }
+  }
+
+  renderVendorsTab = () => {
+    if(this.state.loggedIn) {
+      return (
+        <span><a className="vendors" href="/vendors">Vendors</a> {' '}|{' '}</span>
+      );
     }
   }
   
@@ -96,7 +102,9 @@ export default class TopNavBar extends React.Component {
         {this.renderSignInTab()}
         {/* <a href="/leaderboards">Leaderboards</a>{' '}|{' '} */}
         {this.renderMyPortfolioTab()}
+        {this.renderVendorsTab()}
         {this.renderSpinAnAssetTab()}
+
       </div>
     )
   }

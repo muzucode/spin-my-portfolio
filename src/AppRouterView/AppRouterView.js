@@ -10,6 +10,7 @@ import SignInView from '../Views/SignInView';
 import SignUpView from '../Views/SignUpView';
 import LeaderboardsView from '../Views/LeaderboardsView';
 import SpinAssetView from "../Views/SpinAssetView";
+import VendorsView from "../Views/VendorsView";
 
 export default class AppRouterView extends React.Component {
   render() {
@@ -24,6 +25,7 @@ export default class AppRouterView extends React.Component {
           <Route exact path='/signup' component={SignUpView} />
           <Route exact path='/leaderboards' component={LeaderboardsView} />
           <Route exact path='/spin' component={SpinAssetView} />
+          <Route exact path='/vendors' component={VendorsView} />
         </Switch>
       </Router>
     )

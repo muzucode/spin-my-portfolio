@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Bungee&family=Koh+Santepheap:wght@100;400&family=Playball&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;300&display=swap');
 .App {
   text-align: center;
 }
@@ -15,9 +16,8 @@
 }
 
 .App-title {
-  font-size: 2em;
-  font-family: 'Koh Santepheap', cursive;
-  font-weight: 400;
+  font-size: 3em;
+  font-family: 'Raleway', sans-serif;
 }
 
 .App-intro {
@@ -28,13 +28,16 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+.vendors{
+  color: rgb(255, 113, 113) !important;
+}
 
 .top-nav a{
   color: white;
   text-decoration: none;
 }
 .top-nav {
-  font-family: 'Koh Santepheap', cursive;
+  font-family: 'Raleway', sans-serif;
 
 }
 .top-nav a:hover{

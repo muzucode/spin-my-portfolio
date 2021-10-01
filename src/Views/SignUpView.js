@@ -64,6 +64,7 @@ export default class SignUpView extends React.Component {
     // cognito sign up
     this.cognitoSignUp(this.state.signUp.username, this.state.signUp.password)
     .then(() => {
+      // Redirect to signin if successful
       window.location.href = '/signin'
     });
   }

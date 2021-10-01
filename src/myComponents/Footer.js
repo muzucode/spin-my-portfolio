@@ -8,16 +8,17 @@ var style = {
   borderTop: "1px solid #222222",
   textAlign: "left",
   padding: "20px 20px 20px 40px",
-  position: "fixed",
   left: "0",
-  bottom: "0",
-  width: "100%",
   display: "flex",
-  flexFlow: "row"
+  flexFlow: "row",
+  bottom: '0px',
+  width: '100%',
+  height: '100px',
+  position: 'fixed'
 }
 
 var footerImg = {
-  width: "50px"
+  height:'50px'
 }
 
 var footerText = {
