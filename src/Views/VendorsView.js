@@ -37,7 +37,7 @@ export default class VendorsView extends React.Component {
           key={i}
           cardHeader={'Vendor'}
           name={this.state.vendors[i]}
-          description={'descriptionnnnn'}
+          description={'descriptionnnnn adsfasdfasdf asdfasdfasdf asdfadsgvcbcxvxcv xcvbxcvbxcvb xcvbxcvbbxc xcvb'}
         />
       )
     }
